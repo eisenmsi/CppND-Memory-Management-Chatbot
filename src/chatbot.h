@@ -30,6 +30,11 @@ public:
     //// STUDENT CODE
     ////
 
+    ChatBot(const ChatBot &source);            // Copy constructor
+    ChatBot(ChatBot &&source);                 // Move constructor
+    ChatBot &operator=(const ChatBot &source); // Copy assignment operator
+    ChatBot &operator=(ChatBot &&source);      // Move assignment operator
+
     ////
     //// EOF STUDENT CODE
 
@@ -37,7 +42,7 @@ public:
     void SetCurrentNode(GraphNode *node);
     void SetRootNode(GraphNode *rootNode) { _rootNode = rootNode; }
     void SetChatLogicHandle(ChatLogic *chatLogic) { _chatLogic = chatLogic; }
-    ChatLogic* GetChatLogicHandle() { return _chatLogic; }
+    ChatLogic *GetChatLogicHandle() { return _chatLogic; }
     wxBitmap *GetImageHandle() { return _image; }
 
     // communication
